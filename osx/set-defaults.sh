@@ -14,7 +14,7 @@ defaults write com.apple.Finder FXPreferredViewStyle Nlsv
 #chflags nohidden ~/Library
 
 # Disable dashboard
-#defaults write com.apple.dashboard mcx-disabled -boolean YES
+defaults write com.apple.dashboard mcx-disabled -boolean YES
 
 # Set a really fast key repeat.
 # defaults write NSGlobalDomain KeyRepeat -int 0
@@ -24,8 +24,8 @@ defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 
 # Set up Safari for development.
-#defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
-#defaults write com.apple.Safari IncludeDevelopMenu -bool true
-#defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
-#defaults write com.apple.Safari "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled" -bool true
-#defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
+defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
+defaults write com.apple.Safari IncludeDevelopMenu -bool true
+defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
+defaults write com.apple.Safari "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled" -bool true
+defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
