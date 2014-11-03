@@ -77,9 +77,10 @@ export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-alias lakkassh="ssh tutka@lakka.kapsi.fi"
+alias zshconfig="vim ~/.zshrc"
+alias lakkairc="ssh tutka@lakka.kapsi.fi -t 'screen -rd; bash -l'"
+alias reload=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
+alias zshrc="vim ~/.zshrc && reload"
 
 ############################################
 #             DOTFILES ADDON               #
@@ -115,3 +116,4 @@ do
 done
 
 unset config_files
+
