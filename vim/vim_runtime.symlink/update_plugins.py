@@ -13,9 +13,13 @@ syntastic https://github.com/scrooloose/syntastic
 nerdtree https://github.com/scrooloose/nerdtree
 ack.vim https://github.com/mileszs/ack.vim
 ctrlp https://github.com/kien/ctrlp.vim
+bufexplorer https://github.com/corntrace/bufexplorer
+vim-commentary https://github.com/tpope/vim-commentary
+vim-airline https://github.com/bling/vim-airline
+vim-fugitive https://github.com/tpope/vim-fugitive
+vim-gitgutter https://github.com/airblade/vim-gitgutter
 """.strip()
 
-#bufexplorer https://github.com/corntrace/bufexplorer
 #mayansmoke https://github.com/vim-scripts/mayansmoke
 #nginx.vim https://github.com/vim-scripts/nginx.vim
 #open_file_under_cursor.vim https://github.com/amix/open_file_under_cursor.vim
@@ -34,12 +38,9 @@ ctrlp https://github.com/kien/ctrlp.vim
 #vim-surround https://github.com/tpope/vim-surround
 #vim-expand-region https://github.com/terryma/vim-expand-region
 #vim-multiple-cursors https://github.com/terryma/vim-multiple-cursors
-#vim-fugitive https://github.com/tpope/vim-fugitive
-#vim-airline https://github.com/bling/vim-airline
 #goyo.vim https://github.com/junegunn/goyo.vim
 #vim-zenroom2 https://github.com/amix/vim-zenroom2
 #vim-repeat https://github.com/tpope/vim-repeat
-#vim-commentary https://github.com/tpope/vim-commentary
 #vim-go https://github.com/fatih/vim-go
 
 GITHUB_ZIP = '%s/archive/master.zip'
