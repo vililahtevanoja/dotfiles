@@ -128,6 +128,9 @@ map <c-space> ?
 nmap j gj
 nmap k gk
 
+" NERDTree keymaps
+map <C-n> :NERDTreeToggle<CR>
+
 """"""""""""""""""""""""""""""
 " => CTRL-P
 """"""""""""""""""""""""""""""
