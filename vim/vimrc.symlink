@@ -1,6 +1,25 @@
-set runtimepath+=~/.vim_runtime
+set runtimepath+=~/.vim_runtime/bundle/Vundle.vim
 
-execute pathogen#infect()
+set nocompatible
+filetype off
+
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'vim-scripts/peaksea'
+Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdtree'
+Plugin 'mileszs/ack.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'corntrace/bufexplorer'
+Plugin 'tpope/vim-commentary'
+Plugin 'bling/vim-airline'
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+
+call vundle#end()
+
 filetype plugin indent on
 
 " syntax highlighting
