@@ -10,7 +10,7 @@
 "
 "============================================================================
 
-if exists("g:loaded_syntastic_puppet_puppetlint_checker")
+if exists('g:loaded_syntastic_puppet_puppetlint_checker')
     finish
 endif
 let g:loaded_syntastic_puppet_puppetlint_checker = 1
@@ -20,14 +20,11 @@ set cpo&vim
 
 function! SyntaxCheckers_puppet_puppetlint_IsAvailable() dict
     call self.log("executable('puppet') = " . executable('puppet') . ', ' .
-        \ "executable(" . string(self.getExec()) . ") = " . executable(self.getExec()))
+        \ 'executable(' . string(self.getExec()) . ') = ' . executable(self.getExec()))
     if !executable('puppet') || !executable(self.getExec())
         return 0
     endif
-
-    let ver = syntastic#util#getVersion(self.getExecEscaped() . ' --version 2>' . syntastic#util#DevNull())
-    call self.log(self.getExec() . ' version =', ver)
-
+    let ver = self.getVersion(self.getExecEscaped() . ' --version 2>' . syntastic#util#DevNull())
     return syntastic#util#versionIsAtLeast(ver, [0, 1, 10])
 endfunction
 
@@ -52,4 +49,4 @@ call g:SyntasticRegistry.CreateAndRegisterChecker({
 let &cpo = s:save_cpo
 unlet s:save_cpo
 
-" vim: set et sts=4 sw=4:
+" vim: set sw=4 sts=4 et fdm=marker:
