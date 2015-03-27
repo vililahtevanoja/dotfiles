@@ -3,7 +3,7 @@ set runtimepath+=~/.vim_runtime/bundle/Vundle.vim
 set nocompatible
 filetype off
 
-call vundle#begin()
+call vundle#begin('~/.vim_runtime/bundle')
 
 Plugin 'gmarik/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
@@ -17,6 +17,9 @@ Plugin 'tpope/vim-commentary'
 Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'klen/python-mode'
+Plugin 'davidhalterjedi-vim'
+Plugin 'derekwyatt/vim-scala'
 
 call vundle#end()
 
@@ -168,6 +171,56 @@ let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
 let g:syntastic_python_checkers=['pyflakes']
 
 """"""""""""""""""""""""""""""
+" python-mode
+""""""""""""""""""""""""""""""
+" Python-mode
+" Activate rope
+" Keys:
+" K             Show python docs
+" <Ctrl-Space>  Rope autocomplete
+" <Ctrl-c>g     Rope goto definition
+" <Ctrl-c>d     Rope show documentation
+" <Ctrl-c>f     Rope find occurrences
+" <Leader>b     Set, unset breakpoint (g:pymode_breakpoint enabled)
+" [[            Jump on previous class or function (normal, visual, operator modes)
+" ]]            Jump on next class or function (normal, visual, operator modes)
+" [M            Jump on previous class or method (normal, visual, operator modes)
+" ]M            Jump on next class or method (normal, visual, operator modes)
+let g:pymode_rope = 0
+
+" Documentation
+let g:pymode_doc = 1
+let g:pymode_doc_key = 'K'
+
+"Linting
+let g:pymode_lint = 1
+let g:pymode_lint_checker = "pyflakes,pep8"
+" Auto check on save
+let g:pymode_lint_write = 1
+
+" Support virtualenv
+let g:pymode_virtualenv = 1
+
+" Enable breakpoints plugin
+let g:pymode_breakpoint = 1
+let g:pymode_breakpoint_key = '<leader>b'
+
+" syntax highlighting
+let g:pymode_syntax = 1
+let g:pymode_syntax_all = 1
+let g:pymode_syntax_indent_errors = g:pymode_syntax_all
+let g:pymode_syntax_space_errors = g:pymode_syntax_all
+
+" Don't autofold code
+let g:pymode_folding = 0
+
+""""""""""""""""""""""""""""""
+" JEDI-VIM
+""""""""""""""""""""""""""""""
+let g:jedi#completions_enabled=1
+set omnifunc=jedi#completions
+
+""""""""""""""""""""""""""""""
 " => Python section
 """"""""""""""""""""""""""""""
 let python_highlight_all = 1
@@ -188,7 +241,7 @@ au FileType python map <buffer> <leader>C ?class
 au FileType python map <buffer> <leader>D ?def 
 
 
-""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""
 " => JavaScript section
 """""""""""""""""""""""""""""""
 au FileType javascript call JavaScriptFold()
@@ -211,6 +264,11 @@ function! JavaScriptFold()
     endfunction
     setl foldtext=FoldText()
 endfunction
+
+"""""""""""""""""""""""""""""""
+" => Git section
+"""""""""""""""""""""""""""""""
+autocmd Filetype gitcommit spell textwidth=72
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
