@@ -18,7 +18,7 @@ Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'klen/python-mode'
-Plugin 'davidhalterjedi-vim'
+Plugin 'davidhalter/jedi-vim'
 Plugin 'derekwyatt/vim-scala'
 
 call vundle#end()
