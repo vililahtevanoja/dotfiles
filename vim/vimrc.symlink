@@ -20,6 +20,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'klen/python-mode'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'derekwyatt/vim-scala'
+Plugin 'alvan/vim-closetag'
 
 call vundle#end()
 
@@ -268,7 +269,7 @@ endfunction
 """""""""""""""""""""""""""""""
 " => Git section
 """""""""""""""""""""""""""""""
-autocmd Filetype gitcommit spell textwidth=72
+autocmd Filetype gitcommit setlocal textwidth=72
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
