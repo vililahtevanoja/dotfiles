@@ -46,24 +46,29 @@ ZSH_THEME="Soliah"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew)
+plugins=(git brew gradle sublime autojump rand-quote)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    export PATH="$PATH:"
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/vili/Projects/bin:/Users/vili/Projects/gradle-2.1/bin:"
+    [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+fi
 
-export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='mvim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -77,10 +82,13 @@ export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin"
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="vim ~/.zshrc"
-alias lakkairc="ssh tutka@lakka.kapsi.fi -t 'screen -rd; bash -l'"
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias lakkairc="ssh lakka -t 'screen -rd; bash -l'"
 alias reload=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
 alias zshrc="vim ~/.zshrc && reload"
+alias vimrc="vim ~/.vimrc"
+alias diffs="diff --side-by-side --suppress-common-lines"
 
 ############################################
 #             DOTFILES ADDON               #
