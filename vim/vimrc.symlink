@@ -26,6 +26,8 @@ call vundle#end()
 
 filetype plugin indent on
 
+set ff=unix
+
 " syntax highlighting
 syntax enable
 set background=dark
@@ -169,7 +171,8 @@ let g:ctrlp_custom_ignore = 'node_modules\|^\.DS_Store\|^\.git\|^\.coffee'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Syntastic (syntax checker)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:syntastic_python_checkers=['pyflakes']
+"let g:syntastic_python_checkers=['pylint', 'pyflakes']
+let g:syntastic_python_checkers=['flake8']
 
 """"""""""""""""""""""""""""""
 " python-mode
@@ -194,8 +197,9 @@ let g:pymode_doc = 1
 let g:pymode_doc_key = 'K'
 
 "Linting
-let g:pymode_lint = 1
-let g:pymode_lint_checker = "pyflakes,pep8"
+let g:pymode_lint = 0 
+"let g:pymode_lint_checker = "pyflakes,pep8"
+let g:pymode_lint_checker = "flake8"
 " Auto check on save
 let g:pymode_lint_write = 1
 
@@ -226,6 +230,8 @@ set omnifunc=jedi#completions
 """"""""""""""""""""""""""""""
 let python_highlight_all = 1
 au FileType python syn keyword pythonDecorator True None False self
+
+autocmd FileType python set colorcolumn=120
 
 au BufNewFile,BufRead *.jinja set syntax=htmljinja
 au BufNewFile,BufRead *.mako set ft=mako
