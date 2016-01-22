@@ -101,7 +101,7 @@ alias sudo="sudo "
 alias cd..="cd .."
 alias cd..."cd ..; cd .."
 alias ..="cd .."
-alis ...="cd ..; cd .."
+alias ...="cd ..; cd .."
 
 ############################################
 #             DOTFILES ADDON               #
