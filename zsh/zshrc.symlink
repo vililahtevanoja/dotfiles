@@ -54,7 +54,7 @@ source $ZSH/oh-my-zsh.sh
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
     export PATH="$PATH:"
 elif [[ "$OSTYPE" == "darwin"* ]]; then
-    export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/vili/Projects/bin:/Users/vili/Projects/gradle-2.1/bin:"
+    export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/vili/Projects/bin:"
     [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 fi
 
@@ -69,6 +69,11 @@ if [[ -n $SSH_CONNECTION ]]; then
 else
   export EDITOR='mvim'
 fi
+
+############################################
+#             OWN EXPORTS                  #
+############################################
+export SCALA_HOME='/usr/local/opt/scala/idea'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -89,6 +94,11 @@ alias reload=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
 alias zshrc="vim ~/.zshrc && reload"
 alias vimrc="vim ~/.vimrc"
 alias diffs="diff --side-by-side --suppress-common-lines"
+alias sudo="sudo "
+alias cd..="cd .."
+alias cd..."cd ..; cd .."
+alias ..="cd .."
+alis ...="cd ..; cd .."
 
 ############################################
 #             DOTFILES ADDON               #
