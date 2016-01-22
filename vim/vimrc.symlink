@@ -21,6 +21,7 @@ Plugin 'klen/python-mode'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'alvan/vim-closetag'
+Plugin 'fsharp/vim-fsharp'
 
 call vundle#end()
 
