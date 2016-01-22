@@ -89,6 +89,9 @@ export SCALA_HOME='/usr/local/opt/scala/idea'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias cd..="cd .."
+alias ..="cd .."
+alias ...="cd ..;cd .."
 alias lakkairc="ssh lakka -t 'screen -rd; bash -l'"
 alias reload=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
 alias zshrc="vim ~/.zshrc && reload"
