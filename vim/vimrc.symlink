@@ -82,8 +82,8 @@ set ruler
 set cmdheight=2
 
 " Configure backspace so it acts as it should act
-" set backspace=eol,start,indent
-" set whichwrap+=<,>,h,l
+set backspace=eol,start,indent
+set whichwrap+=<,>,h,l
 
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
