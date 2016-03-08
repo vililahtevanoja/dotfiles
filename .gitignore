@@ -1,4 +1,8 @@
 vim/vim_runtime.symlink/bundle/*
 
+<<<<<<< HEAD
 git/gitconfig.symlink
 
+=======
+git/gitconfig.local.symlink
+>>>>>>> upstream/master
