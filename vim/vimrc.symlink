@@ -42,8 +42,6 @@ set ff=unix
 syntax enable
 set background=dark
 colorscheme peaksea
-" peaksea options
-"colorscheme peaksea
 
 " set indentation
 set smartindent
