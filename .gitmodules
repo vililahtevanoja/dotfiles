@@ -1,0 +1,4 @@
+[submodule "VundleVim/Vundle.vim"]
+    path = vim/vim_runtime.symlink/bundle/Vundle.vim
+    url = git://github.com/VundleVim/Vundle.vim.git
+    ignore = all
