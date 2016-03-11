@@ -1,3 +1,12 @@
+" Install Vundle if not present
+let vundle_readme=expand('~/.vim_runtime/bundle/Vundle.vim/README.md')
+if !filereadable(vundle_readme)
+    echo "Installing Vundle.."
+    echo ""
+    silent !mkdir -p ~/.vim/bundle
+    silent !git clone https://github.com/VundleVim/Vundle.vim ~/.vim_runtime/bundle/Vundle.vim
+endif
+
 set runtimepath+=~/.vim_runtime/bundle/Vundle.vim
 
 set nocompatible
