@@ -1,7 +1,7 @@
 cask_args appdir: '/Applications'
 
-tap 'caskroom/cask'
 tap 'homebrew/bundle'
+tap 'puma/puma'
 
 brew 'ack'
 brew 'autoconf'
@@ -13,6 +13,7 @@ brew 'gdbm'
 brew 'git'
 brew 'gradle'
 brew 'htop-osx'
+brew 'git'
 brew 'openssl'
 brew 'python3'
 brew 'readline'

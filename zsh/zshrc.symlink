@@ -54,7 +54,7 @@ source $ZSH/oh-my-zsh.sh
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
     export PATH="$PATH:"
 elif [[ "$OSTYPE" == "darwin"* ]]; then
-    export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/vili/Projects/bin:"
+    export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/npm/bin:/Users/vili/Projects/bin:"
     [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 fi
 
@@ -74,6 +74,8 @@ fi
 #             OWN EXPORTS                  #
 ############################################
 export SCALA_HOME='/usr/local/opt/scala/idea'
+export DATABASE_URL=postgres:///$(whoami)
+export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -138,3 +140,4 @@ done
 
 unset config_files
 
+source /usr/local/share/zsh/site-functions/_aws
