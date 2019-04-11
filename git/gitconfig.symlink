@@ -32,10 +32,14 @@
     # for more information on different options of the below setting.
     #
     # Setting to git 2.0 default to suppress warning message
-    default = simple
+	default = current
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+#driver for merging XCode project files
+[merge "mergepbx"]
+    name = XCode project files merger
+    driver = ~/sources/nextgen/ios/Tools/mergepbx %O %A %B

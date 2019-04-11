@@ -76,6 +76,13 @@ fi
 export SCALA_HOME='/usr/local/opt/scala/idea'
 export DATABASE_URL=postgres:///$(whoami)
 export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
+export PATH="/usr/local/share/dotnet:$PATH"
+export DOTNET_ROOT=/usr/local/share/dotnet/
+export MSBuildSDKsPath=$DOTNET_ROOT/sdk/$(${DOTNET_ROOT}/dotnet --version)/Sdks
+export PATH=$PATH:$DOTNET_ROOT
+export NPM_ARTIFACTORY_4_EMAIL="vili.lahtevanoja@schibsted.com"
+export NPM_ARTIFACTORY_4_AUTH_KEY="AKCp5cbnH6EzcbGpTw2bHoPEzvaqsxMsHnGymRwXs91UvC7WeUbXpAe9kb3qLR4LW9sinc8eK"
+export GO111MODULE=on
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -97,6 +104,7 @@ alias ...="cd ..;cd .."
 alias reload=". ~/.zshrc && echo 'ZSH config reloaded from ~/.zshrc'"
 alias zshrc="vim ~/.zshrc && reload"
 alias vimrc="vim ~/.vimrc"
+alias sshconfig="vim ~/.ssh/config"
 alias diffs="diff --side-by-side --suppress-common-lines"
 alias sudo="sudo "
 alias cd..="cd .."
@@ -141,3 +149,10 @@ done
 unset config_files
 
 source /usr/local/share/zsh/site-functions/_aws
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/vililahtevanoja/.sdkman"
+[[ -s "/Users/vililahtevanoja/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/vililahtevanoja/.sdkman/bin/sdkman-init.sh"
+
+# added by travis gem
+[ -f /Users/vililahtevanoja/.travis/travis.sh ] && source /Users/vililahtevanoja/.travis/travis.sh
