@@ -150,9 +150,13 @@ unset config_files
 
 source /usr/local/share/zsh/site-functions/_aws
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/vililahtevanoja/.sdkman"
-[[ -s "/Users/vililahtevanoja/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/vililahtevanoja/.sdkman/bin/sdkman-init.sh"
+unset config_files
 
-# added by travis gem
-[ -f /Users/vililahtevanoja/.travis/travis.sh ] && source /Users/vililahtevanoja/.travis/travis.sh
+# Better history
+# Credits to https://coderwall.com/p/jpj_6q/zsh-better-history-searching-with-arrow-keys
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search # Up
+bindkey "^[[B" down-line-or-beginning-search # Down
